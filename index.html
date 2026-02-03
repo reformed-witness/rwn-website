@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWN | Timeless Truth</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fbf8f4',
+                            100: '#f4ece1',
+                            500: '#B88B5A',
+                            600: '#9E754A',
+                            900: '#433424',
+                        },
+                        obsidian: '#121212'
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-brand-50 dark:bg-obsidian text-stone-900 dark:text-stone-100 transition-colors duration-500">
+
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-brand-500 w-full z-[100] scale-x-0"></div>
+
+    <header class="fixed w-full top-0 z-50 glass border-b border-stone-200/50 dark:border-stone-800/50">
+        <div class="container mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="p-2 bg-brand-500 rounded-lg text-white group-hover:rotate-12 transition-transform duration-300">
+                    <i data-lucide="book-open"></i>
+                </div>
+                <span class="text-xl font-bold font-serif tracking-tight">RWN<span class="text-brand-500">.</span></span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-8 font-medium text-xs uppercase tracking-[0.2em]">
+                <a href="#about" class="hover:text-brand-500 transition-colors">Vision</a>
+                <a href="#ministries" class="hover:text-brand-500 transition-colors">Ministries</a>
+                <a href="#labs" class="hover:text-brand-500 transition-colors">Labs</a>
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-brand-100 dark:hover:bg-brand-900/30 transition-colors ml-4">
+                    <i data-lucide="moon" class="dark:hidden w-4 h-4"></i>
+                    <i data-lucide="sun" class="hidden dark:block w-4 h-4"></i>
+                </button>
+                <a href="https://subsplash.com/reformedwitness/give" target="_blank" class="bg-brand-900 dark:bg-brand-500 text-white px-6 py-2.5 rounded-full transition-all">Support</a>
+            </nav>
+
+            <button class="lg:hidden p-2" id="mobile-toggle">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="relative min-h-[85vh] flex items-center pt-20 overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 bg-gradient-to-b from-transparent to-brand-50 dark:to-obsidian z-10"></div>
+                <img src="https://images.unsplash.com/photo-1519791883288-dc8bd696e667?auto=format&fit=crop&w=2000&q=80" 
+                     class="w-full h-full object-cover opacity-20 dark:opacity-10 scale-105 hero-zoom" alt="Library">
+            </div>
+
+            <div class="container mx-auto px-6 relative z-20">
+                <div class="max-w-4xl">
+                    <h1 class="text-6xl md:text-8xl font-serif mb-8 leading-[1.1]">
+                        Timeless Truth. <br>
+                        <span class="italic text-brand-500">Modern Witness.</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-stone-600 dark:text-stone-400 mb-10 max-w-2xl leading-relaxed">
+                        Upholding the historic Reformed tradition through accessible media, scholarship, and community.
+                    </p>
+                    <a href="#ministries" class="px-8 py-4 bg-brand-500 text-white rounded-xl font-semibold hover:bg-brand-600 transition-all inline-flex items-center gap-2">
+                        Our Network <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="ministries" class="py-24 bg-white dark:bg-neutral-900 transition-colors">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
+                    
+                    <div class="md:col-span-8 md:row-span-2 relative group overflow-hidden rounded-[2.5rem] bento-card shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=1200" class="absolute inset-0 w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                        <div class="absolute top-8 right-8 flex gap-2">
+                            <span class="bg-brand-500 text-white text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-full">Coming Soon</span>
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-10">
+                            <h3 class="text-4xl font-serif text-white mb-4">Pulpit Stream</h3>
+                            <p class="text-stone-300 mb-6 max-w-md">Stream sermons and discussions from trusted Reformed pastors.</p>
+                            <a href="https://pulpitstream.com" target="_blank" class="inline-flex items-center gap-2 text-brand-500 font-bold hover:text-white transition-colors">
+                                Preview Page <i data-lucide="external-link" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="md:col-span-4 md:row-span-1 bg-brand-100 dark:bg-stone-800 rounded-[2.5rem] p-10 flex flex-col justify-between bento-card">
+                        <div>
+                            <h3 class="text-2xl font-serif mb-2">Confessions of Grace</h3>
+                            <p class="text-stone-600 dark:text-stone-400 text-sm">Theological reflections and devotional pieces.</p>
+                        </div>
+                        <a href="https://confessionsofgrace.com" target="_blank" class="text-brand-600 dark:text-brand-500 font-bold flex items-center gap-2">
+                            Visit Blog <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <div class="md:col-span-4 md:row-span-1 bg-stone-900 text-white rounded-[2.5rem] p-10 flex flex-col justify-between bento-card overflow-hidden relative">
+                        <i data-lucide="share-2" class="absolute -right-4 -top-4 w-24 h-24 opacity-5"></i>
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-serif mb-2">Confessional.social</h3>
+                            <p class="text-stone-400 text-sm">A decentralized space for Christian fellowship.</p>
+                        </div>
+                        <a href="https://confessional.social" target="_blank" class="text-brand-500 font-bold flex items-center gap-2 relative z-10">
+                            Join Community <i data-lucide="users" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <div class="md:col-span-12 md:row-span-1 border-2 border-dashed border-stone-200 dark:border-stone-800 rounded-[2.5rem] p-10 flex flex-col md:flex-row items-center justify-between bento-card group">
+                        <div class="max-w-xl text-center md:text-left">
+                            <h3 class="text-2xl font-serif mb-2">Dead Puritan Society</h3>
+                            <p class="text-stone-500 text-sm leading-relaxed">Engage with profound wisdom from past theologians. This initiative provides curated quotes and resources for the modern church.</p>
+                        </div>
+                        <div class="mt-6 md:mt-0 flex flex-col items-center md:items-end">
+                            <span class="text-[10px] font-bold text-brand-500 uppercase tracking-widest mb-2">Archive Research</span>
+                            <div class="px-6 py-2 bg-stone-100 dark:bg-stone-800 rounded-full text-stone-400 text-xs font-mono">LOCKED // COMING SOON</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="labs" class="py-24 bg-brand-50 dark:bg-obsidian border-y border-stone-200 dark:border-stone-800">
+            <div class="container mx-auto px-6">
+                <div class="flex items-center gap-4 mb-12">
+                    <h2 class="text-3xl font-serif">RWN Labs</h2>
+                    <div class="h-px flex-grow bg-brand-500/20"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white dark:bg-neutral-900 p-8 rounded-3xl border border-stone-200 dark:border-stone-800 hover:border-brand-500 transition-all">
+                        <h3 class="text-xl font-serif mb-2">GBA Confession Reader</h3>
+                        <p class="text-stone-500 text-xs font-mono mb-4">repo: gba-2lbcf</p>
+                        <a href="https://github.com/reformed-witness/gba-2lbcf" target="_blank" class="text-brand-500 font-bold text-xs flex items-center gap-2">VIEW SOURCE <i data-lucide="github" class="w-4 h-4"></i></a>
+                    </div>
+                    <div class="bg-white dark:bg-neutral-900 p-8 rounded-3xl border border-stone-200 dark:border-stone-800 hover:border-brand-500 transition-all">
+                        <h3 class="text-xl font-serif mb-2">Konfessio</h3>
+                        <p class="text-stone-500 text-xs font-mono mb-4">repo: konfessio</p>
+                        <a href="https://github.com/reformed-witness/konfessio" target="_blank" class="text-brand-500 font-bold text-xs flex items-center gap-2">VIEW SOURCE <i data-lucide="github" class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-brand-50 dark:bg-obsidian py-16 text-center border-t border-stone-200 dark:border-stone-800">
+        <div class="font-serif text-2xl mb-8">RWN<span class="text-brand-500">.</span></div>
+        <p class="text-[10px] uppercase tracking-[0.4em] text-stone-400">© 2026 Reformed Witness Network</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
