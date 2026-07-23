@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: rwn-website
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/rwn_website}
+    username: ${DB_USER:rwn_website}
+    password: ${DB_PASSWORD:changeme}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    enabled: true
+
+platform:
+  web:
+    spa:
+      enabled: true
+  data:
+    auditing:
+      enabled: true
+
+site:
+  base-url: ${SITE_BASE_URL:https://reformedwitness.net}
+  assets:
+    base-url: ${ASSET_BASE_URL:https://s3.thebennett.net/rwn}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true

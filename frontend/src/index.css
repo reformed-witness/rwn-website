@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* Dark mode is a class on <html>, toggled in the header — same as the old site. In Tailwind v4 the
+   `dark:` variant has to be told that. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Self-hosted, latin subset. The old site pulled these from Google on every page load. */
+@font-face {
+  font-family: 'Outfit';
+  src: url('./fonts/outfit-latin.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./fonts/playfair-latin.woff2') format('woff2');
+  font-weight: 400 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Code';
+  src: url('./fonts/firacode-latin.woff2') format('woff2');
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@theme {
+  --color-brand-50: #fbf8f4;
+  --color-brand-100: #f4ece1;
+  --color-brand-500: #b88b5a;
+  --color-brand-600: #9e754a;
+  --color-brand-900: #433424;
+  --color-obsidian: #121212;
+
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
+  --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+/* Frosted header and cards. */
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.dark .glass {
+  background: rgba(18, 18, 18, 0.75);
+}
+
+/* Bento card physics. */
+.bento-card {
+  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.bento-card:hover {
+  transform: translateY(-10px) scale(1.01);
+}
+
+/* Slow drift on the hero photograph. */
+@keyframes heroZoom {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1.15); }
+}
+.hero-zoom {
+  animation: heroZoom 20s infinite alternate ease-in-out;
+}
+
+/* Sections fade up as they come into view; see useReveal. */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal-active {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-zoom { animation: none; }
+  .bento-card { transition: none; }
+  .reveal-init { opacity: 1; transform: none; transition: none; }
+}

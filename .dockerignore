@@ -1,4 +1,7 @@
-.git
-Dockerfile
-.dockerignore
-README.md
+target/
+frontend/node_modules/
+frontend/dist/
+.git/
+.idea/
+*.iml
+.vscode/
